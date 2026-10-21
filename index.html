@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="theme-color" content="#080808">
+  <meta name="description" content="OGAEX Investment & Trading. Explore trading analysis, market insights and premium trading signals.">
+
+  <title>OGAEX | Investment & Trading</title>
+
+  <style>
+    :root {
+      --black: #080808;
+      --panel: #111111;
+      --gold: #d6ad55;
+      --white: #f7f5f0;
+      --muted: #aaa69e;
+      --border: rgba(214, 173, 85, 0.22);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      background: rgba(8, 8, 8, 0.97);
+    }
+
+    nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      color: var(--gold);
+      font-size: 29px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      white-space: nowrap;
+    }
+
+    .logo-x {
+      display: inline-block;
+      font-size: 36px;
+      font-style: italic;
+      position: relative;
+      transform: skew(-8deg);
+    }
+
+    .logo-x::before {
+      content: "••";
+      position: absolute;
+      top: -17px;
+      right: -2px;
+      font-size: 10px;
+      letter-spacing: 3px;
+      transform: skew(8deg);
+    }
+
+    .brand-subtitle {
+      display: block;
+      font-size: 9px;
+      letter-spacing: 3px;
+      color: var(--white);
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 21px;
+      border: 1px solid var(--gold);
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .button-primary {
+      background: var(--gold);
+      color: #090909;
+    }
+
+    .button-outline {
+      color: var(--gold);
+    }
+
+    .button:hover {
+      opacity: 0.85;
+    }
+
+    .hero {
+      padding: 100px 0 90px;
+      background:
+        radial-gradient(ellipse at 80% 20%,
+        rgba(214, 173, 85, 0.10), transparent 48%);
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      max-width: 800px;
+      font-size: clamp(38px, 7vw, 72px);
+      line-height: 1.12;
+      letter-spacing: -2px;
+      margin-bottom: 24px;
+    }
+
+    h1 span,
+    .gold {
+      color: var(--gold);
+    }
+
+    .hero-copy {
+      color: var(--muted);
+      max-width: 620px;
+      font-size: 16px;
+      margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .notice {
+      margin-top: 38px;
+      padding: 15px 18px;
+      border-left: 3px solid var(--gold);
+      background: rgba(255, 255, 255, 0.035);
+      color: var(--muted);
+      font-size: 12px;
+      max-width: 690px;
+    }
+
+    section {
+      padding: 76px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .section-heading {
+      max-width: 670px;
+      margin-bottom: 38px;
+    }
+
+    h2 {
+      font-size: clamp(28px, 5vw, 42px);
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+
+    .section-heading p,
+    .card p,
+    .about-copy {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      padding: 30px;
+      border-radius: 7px;
+    }
+
+    .card-label {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .card h3 {
+      margin: 12px 0;
+      font-size: 23px;
+    }
+
+    .card p {
+      margin-bottom: 20px;
+    }
+
+    .price {
+      color: var(--gold);
+      font-size: 25px;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: start;
+    }
+
+    .principles {
+      list-style: none;
+      margin-top: 20px;
+    }
+
+    .principles li {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+    }
+
+    .principles li::before {
+      content: "✦";
+      color: var(--gold);
+      margin-right: 12px;
+    }
+
+    .risk-box {
+      padding: 25px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: #0e0e0e;
+    }
+
+    .risk-box h3 {
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .risk-box p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    footer {
+      padding: 35px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 700px) {
+      nav {
+        padding: 18px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 13px;
+      }
+
+      .hero {
+        padding: 70px 0;
+      }
+
+      .cards,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 55px 0;
+      }
+
+      .card {
+        padding: 23px;
+      }
+
+      h1 {
+        letter-spacing: -1px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a class="logo" href="#home" aria-label="OGAEX home">
+        OGA<span class="logo-x">X</span>
+        <span class="brand-subtitle">INVESTMENT &amp; TRADING</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#risk">Risk Disclosure</a>
+        <a href="mailto:contact@ogaex.example"
+           class="button button-outline">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" id="home">
+    <div class="container">
+      <p class="eyebrow">Strategy · Discipline · Transparency</p>
+
+      <h1>
+        Trade With Strategy.<br>
+        <span>Operate With Discipline.</span>
+      </h1>
+
+      <p class="hero-copy">
+        Welcome to OGAEX Investment &amp; Trading, a proposed trading
+        brand focused on market analysis, trading strategies, and
+        trading education and signals.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#services" class="button button-primary">
+          Explore Our Services
+        </a>
+
+        <a href="#about" class="button button-outline">
+          Discover OGAEX
+        </a>
+      </div>
+
+      <div class="notice">
+        Trading involves risk. Cryptocurrency futures and other
+        leveraged instruments can result in substantial losses,
+        including the loss of all trading capital. No return is
+        guaranteed. Review the risks before participating.
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">What We Offer</p>
+        <h2>Trading Services Built Around <span class="gold">Strategy</span></h2>
+        <p>
+          Explore our proposed service categories and choose the
+          approach that best fits your experience and objectives.
+          Availability is subject to applicable requirements.
+        </p>
+      </div>
+
+      <div class="cards">
+
+        <article class="card">
+          <span class="card-label">Service 01</span>
+          <h3>Managed Trading</h3>
+          <p>
+            A proposed service for clients interested in a managed
+            trading arrangement. Eligibility, account custody,
+            fees, profit allocation, and loss arrangements must
+            be agreed upon in writing and satisfy applicable
+            legal and regulatory requirements.
+          </p>
+          <a href="#risk" class="button button-outline">
+            Read Risk Disclosure
+          </a>
+        </article>
+
+        <article class="card">
+          <span class="card-label">Service 02</span>
+          <h3>Premium Trading Signals</h3>
+          <p>
+            A proposed subscription service featuring market
+            analysis and trading setups that may include entry,
+            stop-loss, and take-profit levels. Signals do not
+            guarantee successful trades.
+          </p>
+          <div class="price">$50 <small> / week proposed</small></div>
+          <a href="#risk" class="button button-outline">
+            Learn About Trading Risks
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+
+        <div>
+          <p class="eyebrow">About The Brand</p>
+          <h2>A Focus on <span class="gold">Discipline</span></h2>
+
+          <p class="about-copy">
+            OGAEX is a proposed trading brand being developed
+            in affiliation with HoneyGuide Group. Its intended
+            focus is trading-related services, market analysis,
+            and trading signals.
+          </p>
+
+          <p class="about-copy" style="margin-top:16px">
+            Our intended approach emphasises transparent terms,
+            responsible risk management, and clear communication
+            about trading performance and potential losses.
+          </p>
+        </div>
+
+        <div>
+          <h3>Our Principles</h3>
+          <ul class="principles">
+            <li>Transparent service terms</li>
+            <li>Clear communication about risk</li>
+            <li>Disciplined trading practices</li>
+            <li>Accurate performance reporting</li>
+            <li>Respect for client privacy</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="risk">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Important Information</p>
+        <h2>Understand the <span class="gold">Risks</span></h2>
+      </div>
+
+      <div class="risk-box">
+        <h3>Trading Risk Disclosure</h3>
+
+        <p>
+          Cryptocurrency markets are volatile. Futures and leveraged
+          trading can magnify losses and may result in liquidation
+          of trading positions. You may lose some or all of the
+          capital committed to trading.
+        </p>
+
+        <p>
+          Past performance does not guarantee future results.
+          Projected, targeted, or illustrative returns are not
+          promises of actual performance.
+        </p>
+
+        <p>
+          OGAEX is a proposed brand, and its legal status and
+          eligibility to provide investment-related services must
+          be confirmed before those services are offered.
+          This website does not constitute an invitation to deposit
+          money or a promise of investment returns.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-content">
+    <p>© <span id="year"></span> OGAEX Investment &amp; Trading.</p>
+
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#risk">Risk Disclosure</a>
+    </div>
+
+    <p>Proposed brand. Not a statement of regulatory authorisation.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+</script>
+
+</body>
+</html>
