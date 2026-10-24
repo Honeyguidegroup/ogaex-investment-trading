@@ -1,1 +1,185 @@
 
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080a0c">
+<meta name="description" content="OGAEX — trading insights, market education and risk-aware trading services.">
+<title>OGAEX | Oga Exchange</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080a0c;--panel:#111619;--line:#293137;--gold:#e7bd65;--muted:#9aa5ae;--green:#45d6a0}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:#f4f6f7;font-family:Manrope,Arial,sans-serif}
+a{text-decoration:none;color:inherit}
+.wrap{width:min(1100px,90%);margin:auto}
+header{position:sticky;top:0;background:#080a0cf2;border-bottom:1px solid var(--line);z-index:10}
+nav{min-height:75px;display:flex;justify-content:space-between;align-items:center;gap:15px}
+.logo{font:800 27px "Space Grotesk";letter-spacing:3px;color:var(--gold)}
+.logo small{display:block;font:9px Manrope;letter-spacing:3px;color:#fff}
+.links{display:flex;gap:22px;font-size:12px}
+.links a:hover{color:var(--gold)}
+.btn{display:inline-block;padding:12px 18px;border-radius:8px;background:var(--gold);color:#111;font-weight:800;font-size:12px;border:0;cursor:pointer}
+.outline{border:1px solid var(--gold);background:transparent;color:var(--gold)}
+.hero{padding:75px 0 45px;background:radial-gradient(ellipse at 85% 5%,#47351b55,transparent 50%)}
+.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.eyebrow{font-size:11px;letter-spacing:3px;color:var(--gold);text-transform:uppercase}
+h1{font:700 clamp(43px,7vw,76px)/1.02 "Space Grotesk";letter-spacing:-3px;margin:20px 0}
+h1 span,h2 span{color:var(--gold)}
+p{font-size:14px;line-height:1.9;color:var(--muted)}
+.buttons{display:flex;gap:10px;flex-wrap:wrap;margin:25px 0}
+.card{background:linear-gradient(145deg,#171d21,#0d1012);border:1px solid var(--line);border-radius:18px;padding:23px}
+.price{font:700 35px "Space Grotesk";margin:20px 0 5px}
+.positive{color:var(--green);font-size:12px}
+.chart{width:100%;height:150px;margin-top:20px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:15px}
+.stat{background:#080a0c;padding:12px;border:1px solid var(--line);border-radius:8px}
+.stat small{display:block;color:var(--muted);font-size:10px}
+.stat b{display:block;margin-top:7px;font-size:12px}
+.ticker{overflow:hidden;white-space:nowrap;padding:15px 0;background:#111619;border-block:1px solid var(--line);color:var(--muted);font-size:12px}
+.ticker span{margin-right:35px}
+section{padding:65px 0}
+h2{font:700 clamp(30px,4vw,44px)/1.1 "Space Grotesk";margin:12px 0}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:25px}
+.coin{font-size:24px;color:var(--gold)}
+.card h3{font:600 19px "Space Grotesk"}
+.card p{font-size:12px}
+.market-price{font:700 22px "Space Grotesk";margin-top:20px}
+.badge{color:var(--green);font-size:11px}
+.banner{padding:35px;border:1px solid #58482b;border-radius:18px;background:linear-gradient(120deg,#211b10,#111619)}
+ul{padding-left:18px;color:var(--muted);font-size:13px;line-height:2}
+.faq details{border-bottom:1px solid var(--line);padding:17px 0}
+summary{cursor:pointer;font-weight:700;font-size:13px}
+footer{border-top:1px solid var(--line);padding:30px 0}
+footer p{font-size:11px}
+.disclaimer{font-size:10px;color:#7f8991;line-height:1.8}
+.menu{display:none}
+@media(max-width:750px){
+ .grid{grid-template-columns:1fr}
+ .cards{grid-template-columns:1fr}
+ .links{display:none;position:absolute;top:74px;left:0;right:0;padding:20px;background:#111619;flex-direction:column}
+ .links.open{display:flex}
+ .menu{display:block;background:transparent;border:1px solid var(--line);color:white;padding:9px;border-radius:7px}
+ .stats{grid-template-columns:repeat(3,1fr)}
+ .hero{padding-top:45px}
+ h1{letter-spacing:-2px}
+ .banner{padding:24px}
+}
+</style>
+</head>
+<body><header>
+<div class="wrap">
+<nav>
+<a href="#home" class="logo">OGX<small>OGA EXCHANGE</small></a>
+<button class="menu" onclick="document.querySelector('.links').classList.toggle('open')">MENU ☰</button>
+<div class="links">
+<a href="#markets">Markets</a>
+<a href="#services">Services</a>
+<a href="#about">About</a>
+<a href="#faq">FAQ</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+</div>
+</header><main id="home">
+<section class="hero">
+<div class="wrap grid">
+<div>
+<div class="eyebrow">Trading intelligence · African ambition</div>
+<h1>Trade with a <span>clearer</span> perspective.</h1>
+<p>Welcome to OGAEX — a Nigeria-rooted trading brand focused on market insights, trading education and disciplined risk management.</p>
+<div class="buttons">
+<a class="btn" href="#services">Explore Services ↗</a>
+<a class="btn outline" href="#markets">Explore Markets</a>
+</div>
+<p class="disclaimer">Markets move quickly. Protect your capital, understand the risks and never trade money you cannot afford to lose.</p>
+</div><div class="card">
+<div class="eyebrow">Market watch · Demo</div>
+<h3>Bitcoin / USDT</h3>
+<div class="price">$67,420.80</div>
+<div class="positive">Illustrative market display · Not live data</div>
+<svg class="chart" viewBox="0 0 400 150" preserveAspectRatio="none">
+<defs><linearGradient id="shade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e7bd65" stop-opacity=".35"/><stop offset="1" stop-color="#e7bd65" stop-opacity="0"/></linearGradient></defs>
+<path d="M0 120 L25 105 L48 112 L72 80 L96 91 L120 70 L144 88 L168 48 L192 63 L216 45 L240 57 L264 25 L288 43 L312 32 L336 48 L360 17 L400 25 L400 150 L0 150Z" fill="url(#shade)"/>
+<path d="M0 120 L25 105 L48 112 L72 80 L96 91 L120 70 L144 88 L168 48 L192 63 L216 45 L240 57 L264 25 L288 43 L312 32 L336 48 L360 17 L400 25" fill="none" stroke="#e7bd65" stroke-width="2.5"/>
+</svg>
+<div class="stats">
+<div class="stat"><small>Asset</small><b>BTC</b></div>
+<div class="stat"><small>Market</small><b>Crypto</b></div>
+<div class="stat"><small>Status</small><b>Demo</b></div>
+</div>
+</div>
+</div>
+</section><div class="ticker">
+<marquee scrollamount="4">
+<span>₿ BTC/USDT — DEMO</span><span>◆ ETH/USDT — DEMO</span><span>◎ SOL/USDT — DEMO</span><span>✦ BNB/USDT — DEMO</span><span>◇ XRP/USDT — DEMO</span>
+</marquee>
+</div><section id="markets">
+<div class="wrap">
+<div class="eyebrow">The markets</div>
+<h2>Stay informed. <span>Stay disciplined.</span></h2>
+<p>Explore examples of assets commonly followed by digital-asset traders. Prices below are illustrative placeholders, not current quotes.</p>
+<div class="cards">
+<div class="card"><div class="coin">₿</div><h3>Bitcoin</h3><p>BTC / USDT</p><div class="market-price">$67,420.80</div><div class="badge">Illustrative data</div></div>
+<div class="card"><div class="coin">◆</div><h3>Ethereum</h3><p>ETH / USDT</p><div class="market-price">$3,520.40</div><div class="badge">Illustrative data</div></div>
+<div class="card"><div class="coin">◎</div><h3>Solana</h3><p>SOL / USDT</p><div class="market-price">$148.60</div><div class="badge">Illustrative data</div></div>
+</div>
+</div>
+</section><section id="services">
+<div class="wrap">
+<div class="eyebrow">What we offer</div>
+<h2>Trading support, <span>clearly defined.</span></h2>
+<div class="cards">
+<div class="card"><div class="coin">⌁</div><h3>Market Signals</h3><p>Structured trade ideas with market context, risk considerations and potential entry and exit planning. Signals never guarantee profit.</p><a class="btn outline" href="#contact">Make an enquiry</a></div>
+<div class="card"><div class="coin">◈</div><h3>Trading Education</h3><p>Explore chart analysis, position sizing, risk-to-reward, trading psychology and more disciplined decision-making.</p><a class="btn outline" href="#contact">Learn more</a></div>
+<div class="card"><div class="coin">↗</div><h3>Managed Trading Enquiries</h3><p>Discuss requirements, risks, fees, custody and written terms before considering any managed arrangement.</p><a class="btn outline" href="#contact">Discuss requirements</a></div>
+</div>
+</div>
+</section><section id="about">
+<div class="wrap">
+<div class="banner">
+<div class="eyebrow">Nigerian roots · Global outlook</div>
+<h2>Built from here.<br><span>Looking outward.</span></h2>
+<p>OGAEX, also known as OGX, is a trading-brand concept focused on making market information and structured trading support easier to navigate for audiences in Nigeria and across Africa.</p>
+<p>OGAEX is affiliated with HoneyGuide Group Limited. Verify the legal entity, service terms and applicable regulatory permissions before engaging or sending money.</p>
+<a class="btn" href="#contact">Connect with OGX ↗</a>
+</div>
+</div>
+</section><section id="faq" class="faq">
+<div class="wrap">
+<div class="eyebrow">Important information</div>
+<h2>Know before <span>you engage.</span></h2>
+<details><summary>Are these prices live?</summary><p>No. All prices and charts on this page are illustrative placeholders and are not connected to an exchange.</p></details>
+<details><summary>Do trading signals guarantee profit?</summary><p>No. Trading involves risk, especially when using leverage. You can lose some or all of your capital.</p></details>
+<details><summary>Can I create a client account here?</summary><p>This website is a presentation page. It does not currently provide secure account registration or login.</p></details>
+<details><summary>Does OGX manage client funds?</summary><p>This page does not establish a live fund-management service. Verify the legal entity, permissions, custody arrangements and written terms before transferring money.</p></details>
+<details><summary>Is this financial advice?</summary><p>No. This is general information, not personalized investment advice. Make independent decisions and seek qualified advice where appropriate.</p></details>
+</div>
+</section><section id="contact">
+<div class="wrap">
+<div class="banner">
+<div class="eyebrow">Start a conversation</div>
+<h2>Make your next move<br><span>an informed one.</span></h2>
+<p>Contact OGX to enquire about market education, signal-room access or service requirements.</p>
+<a class="btn" href="mailto:hello@ogaex.example?subject=OGAEX%20Enquiry">Email OGX ↗</a>
+<p class="disclaimer">IMPORTANT: Replace hello@ogaex.example with your verified business email before publishing.</p>
+</div>
+</div>
+</section>
+</main><footer>
+<div class="wrap">
+<a href="#home" class="logo">OGX<small>OGA EXCHANGE</small></a>
+<p>Affiliated with HoneyGuide Group Limited.</p>
+<p class="disclaimer">Digital-asset trading is risky. You may lose some or all of your capital. All market values on this website are illustrative, not live data. No profit is guaranteed.</p>
+<p class="disclaimer">© <span id="year"></span> OGAEX / OGX. All rights reserved.</p>
+</div>
+</footer><script>
+document.getElementById("year").textContent=new Date().getFullYear();
+document.querySelectorAll(".links a").forEach(function(link){
+link.addEventListener("click",function(){
+document.querySelector(".links").classList.remove("open");
+});
+});
+</script></body>
+</html>
