@@ -3,1091 +3,655 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080909">
-<meta name="description" content="OGX — Oga Exchange. A premium trading intelligence experience built around strategy, market awareness and disciplined risk management.">
-<title>OGX | Oga Exchange — Trade With Intention</title>
+<meta name="theme-color" content="#050505">
+<title>OGAEX | Oga Exchange</title>
+<meta name="description" content="OGAEX — Oga Exchange. Trading intelligence, market insights and the boss mindset.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-:root{
-  --bg:#080909;
-  --panel:rgba(255,255,255,.045);
-  --panel2:rgba(255,255,255,.075);
-  --line:rgba(255,255,255,.11);
-  --gold:#d9b66c;
-  --gold2:#f4dfaa;
-  --text:#f5f3ed;
-  --muted:#999b9a;
-  --green:#9bd5ad;
-  --red:#e89b91;
-  --radius:24px;
-  --max:1200px;
+:root {
+  --black:#050505;
+  --panel:#10100e;
+  --gold:#e4b34b;
+  --gold-light:#ffe6a0;
+  --white:#f7f5ef;
+  --muted:#a6a6a1;
+  --border:rgba(228,179,75,.35);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:95px}
-body{
-  background:var(--bg);
-  color:var(--text);
-  font-family:Manrope,Arial,sans-serif;
+* {box-sizing:border-box;margin:0;padding:0}
+html {scroll-behavior:smooth}
+body {
+  background:var(--black);
+  color:var(--white);
+  font-family:"DM Sans",sans-serif;
   overflow-x:hidden;
+}
+a {color:inherit;text-decoration:none}
+button {font:inherit}
+header {
+  height:82px;
+  padding:0 5%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid var(--border);
+  background:rgba(5,5,5,.92);
+  backdrop-filter:blur(18px);
+  position:sticky;
+  top:0;
+  z-index:20;
+}
+.brand {
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+.logo-name {
+  font:800 34px/.9 Manrope,sans-serif;
+  letter-spacing:-3px;
+  background:linear-gradient(120deg,#fff3bc,#dca52f,#fff0a4,#8d5c14);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  position:relative;
+}
+.logo-name:after {
+  content:"";
+  position:absolute;
+  right:0;
+  top:-7px;
+  width:15px;
+  height:15px;
+  border-top:3px solid var(--gold-light);
+  border-right:3px solid var(--gold-light);
+  transform:rotate(-35deg) skew(-10deg);
+}
+.logo-caption {
+  margin-top:7px;
+  font-size:9px;
+  letter-spacing:4px;
+  color:#e8d7a8;
+}
+.brand-divider {height:35px;width:1px;background:var(--gold)}
+.brand-message {
+  font-size:9px;
+  letter-spacing:2px;
+  line-height:1.8;
+  color:#d8bd7b;
+}
+nav {display:flex;align-items:center;gap:23px;font-size:12px}
+nav a {transition:color .2s}
+nav a:hover {color:var(--gold-light)}
+.button {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:14px 23px;
+  border-radius:50px;
+  border:1px solid var(--gold);
+  font-size:12px;
+  font-weight:700;
+  transition:.25s;
+  cursor:pointer;
+}
+.button-gold {
+  background:linear-gradient(120deg,#ffe69a,#dca638);
+  color:#10100b;
+  border-color:transparent;
+}
+.button-outline {color:var(--gold-light);background:#080808a8}
+.button:hover {transform:translateY(-3px);box-shadow:0 8px 28px #e4b34b25}
+.menu-button {
+  display:none;
+  padding:8px 12px;
+  color:var(--gold-light);
+  border:1px solid var(--border);
+  background:transparent;
+  border-radius:8px;
+}
+.hero {
+  position:relative;
+  min-height:570px;
+  display:flex;
+  align-items:center;
+  padding:65px 6%;
+  overflow:hidden;
+  border-bottom:1px solid var(--border);
+  background:
+    radial-gradient(ellipse at 83% 50%,#503510 0%,#211709 23%,#0b0b09 49%,#050505 76%);
+}
+.hero:before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,#050505 0%,#050505f5 32%,#05050575 62%,#05050510);
+}
+.hero-copy {position:relative;z-index:3;max-width:600px}
+.eyebrow {
+  color:var(--gold-light);
+  font-size:11px;
+  letter-spacing:3px;
+  font-weight:700;
+}
+.eyebrow:before {
+  content:"";
+  display:inline-block;
+  width:35px;
+  height:2px;
+  background:var(--gold);
+  vertical-align:middle;
+  margin-right:15px;
+}
+h1 {
+  margin:25px 0;
+  font:500 clamp(56px,7vw,91px)/.98 Manrope,sans-serif;
+  letter-spacing:-4px;
+}
+h1 span {
+  display:block;
+  font-weight:800;
+  background:linear-gradient(110deg,#fff2b8,#e4b34b 55%,#a87520);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.hero-description {
+  max-width:465px;
+  color:#d0d0ca;
+  font-size:15px;
+  line-height:1.8;
+  margin-bottom:28px;
+}
+.hero-buttons {display:flex;flex-wrap:wrap;gap:14px}
+.hero-art {
+  position:absolute;
+  right:0;
+  top:0;
+  width:51%;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  pointer-events:none;
+}
+.orbit {
+  position:absolute;
+  width:min(470px,85%);
+  aspect-ratio:1;
+  border:1px solid #e4b34b65;
+  border-radius:50%;
+  transform:rotate(-25deg) scaleY(.72);
+  box-shadow:0 0 55px #dba63814,inset 0 0 35px #dba63810;
+  animation:orbit 22s linear infinite;
+}
+.orbit:before,.orbit:after {
+  content:"";
+  position:absolute;
+  inset:28px;
+  border:1px solid #e4b34b38;
+  border-radius:50%;
+  transform:rotate(55deg) scaleY(.7);
+}
+.orbit:after {inset:-25px 55px;transform:rotate(-65deg) scaleY(.6)}
+.ogx-mark {
+  position:relative;
+  font:800 clamp(100px,15vw,190px)/1 Manrope,sans-serif;
+  letter-spacing:-.11em;
+  background:linear-gradient(135deg,#fff3b8,#dba52f 35%,#fff0a3 53%,#8b5a12 78%,#f8d878);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  filter:drop-shadow(0 10px 25px #e3ad3435);
+  white-space:nowrap;
+}
+.ogx-mark:after {
+  content:"";
+  position:absolute;
+  top:-.15em;
+  right:0;
+  width:.45em;
+  height:.45em;
+  border-top:.06em solid #ffe69a;
+  border-right:.06em solid #ffe69a;
+  transform:rotate(-35deg) skew(-10deg);
+}
+.hero-side-note {
+  position:absolute;
+  top:24%;
+  left:44%;
+  z-index:4;
+  border-left:1px solid var(--gold);
+  padding-left:20px;
+  color:#ded4b6;
+  font-size:10px;
+  line-height:2;
+  letter-spacing:3px;
+}
+.hero-side-note strong {
+  display:block;
+  color:var(--gold-light);
+  font:700 19px/1.4 Manrope,sans-serif;
+  margin:8px 0;
+}
+.art-label {
+  position:absolute;
+  bottom:13%;
+  right:12%;
+  font-size:9px;
+  letter-spacing:3px;
+  color:var(--gold-light);
+}
+.light-trail {
+  position:absolute;
+  bottom:18%;
+  right:-5%;
+  width:110%;
+  height:2px;
+  background:linear-gradient(90deg,transparent,#ffdc70,transparent);
+  transform:rotate(-19deg);
+  box-shadow:0 0 15px #f2bf4e;
+}
+.market-strip {
+  display:grid;
+  grid-template-columns:repeat(4,1fr) 1.2fr;
+  gap:0;
+  padding:15px 3%;
+  background:#090a09;
+  border-bottom:1px solid var(--border);
+}
+.market-item {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:6px 13px;
+  border-right:1px solid #ffffff12;
+}
+.market-symbol {
+  width:35px;height:35px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  color:#111;
+  background:linear-gradient(140deg,#f6d16a,#a76b0b);
+  font-weight:800;
+}
+.market-item:nth-child(2) .market-symbol {background:linear-gradient(140deg,#a7b7ff,#525cd3);color:white}
+.market-item:nth-child(3) .market-symbol {background:linear-gradient(140deg,#75f5d9,#2865aa)}
+.market-item:nth-child(4) .market-symbol {background:linear-gradient(140deg,#ffe073,#e4a800)}
+.market-name {font-size:10px;color:#c9c9c4}
+.market-price {font-size:12px;margin-top:4px}
+.market-change {margin-left:auto;color:#4bd5a0;font-size:9px;white-space:nowrap}
+.market-note {
+  margin-left:12px;
+  border:1px solid #8f7744a3;
+  border-radius:12px;
+  padding:10px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:#bcbdb7;
+  font-size:10px;
   line-height:1.6;
 }
-body::before{
-  content:"";
-  position:fixed;inset:0;z-index:-2;pointer-events:none;
-  background:
-   radial-gradient(ellipse at 76% 8%,rgba(217,182,108,.11),transparent 34%),
-   radial-gradient(ellipse at 5% 50%,rgba(70,90,83,.09),transparent 32%),
-   radial-gradient(ellipse at 80% 90%,rgba(217,182,108,.06),transparent 30%);
+.market-note strong {display:block;color:var(--gold-light);font-size:11px}
+.quick-links {
+  padding:28px 4%;
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:15px;
+  border-bottom:1px solid var(--border);
+  background:radial-gradient(ellipse at 50% 0%,#b17c2010,transparent 55%),#060707;
 }
-body::after{
-  content:"";position:fixed;inset:0;pointer-events:none;z-index:20;
-  opacity:.12;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.13'/%3E%3C/svg%3E");
+.tile {
+  min-height:155px;
+  padding:19px;
+  border:1px solid #6e5a2f;
+  border-radius:15px;
+  background:linear-gradient(145deg,#171817,#090a0a);
+  transition:.25s;
 }
-a{color:inherit;text-decoration:none}
-button{font:inherit}
-button,a{-webkit-tap-highlight-color:transparent}
-button:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
-.wrap{width:min(var(--max),calc(100% - 44px));margin:auto}
-.mono{font-family:"DM Mono",monospace}
-.gold{color:var(--gold)}
-.muted{color:var(--muted)}
-.eyebrow{
- display:flex;align-items:center;gap:10px;
- color:var(--gold);font:11px "DM Mono",monospace;
- letter-spacing:2.2px;text-transform:uppercase;
+.tile:hover {transform:translateY(-5px);border-color:var(--gold-light)}
+.tile-icon {
+  width:34px;height:34px;
+  display:grid;place-items:center;
+  border:1px solid #bd913a;
+  border-radius:50%;
+  color:var(--gold-light);
+  margin-bottom:11px;
 }
-.eyebrow:before{content:"";width:24px;height:1px;background:var(--gold)}
-h1,h2,h3{letter-spacing:-.055em;line-height:1.08}
-h1{font-size:clamp(46px,8vw,96px);font-weight:600}
-h2{font-size:clamp(34px,5vw,61px);font-weight:600}
-h3{font-size:23px;font-weight:600}
-p{color:var(--muted)}
-section{padding:110px 0;position:relative}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:42px}
-.section-head p{max-width:380px;font-size:14px}
-.section-head h2{margin-top:18px;max-width:650px}
-.rule{height:1px;background:var(--line)}
-.glass{
- background:linear-gradient(145deg,rgba(255,255,255,.085),rgba(255,255,255,.018));
- border:1px solid rgba(255,255,255,.11);
- box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 24px 80px rgba(0,0,0,.2);
- backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
+.tile h3 {font:700 15px Manrope,sans-serif;margin-bottom:7px}
+.tile p {font-size:11px;line-height:1.6;color:#b8b9b3;margin-bottom:12px}
+.tile a {font-size:11px;color:var(--gold-light);font-weight:700}
+.section {padding:75px 4%;border-bottom:1px solid #d3a53c25}
+.section-heading {display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:30px}
+.section-label {font-size:10px;letter-spacing:3px;color:var(--gold-light);text-transform:uppercase}
+h2 {font:700 clamp(30px,4vw,47px)/1.12 Manrope,sans-serif;letter-spacing:-1.5px;margin:12px 0}
+.section-heading p,.body-copy {max-width:440px;font-size:13px;line-height:1.8;color:var(--muted)}
+.market-cards {display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.market-card {
+  padding:23px;
+  border:1px solid #4d432c;
+  border-radius:15px;
+  background:linear-gradient(145deg,#151615,#080909);
 }
-.btn{
- display:inline-flex;align-items:center;justify-content:center;gap:10px;
- border:1px solid transparent;border-radius:999px;padding:14px 21px;
- font-size:12px;font-weight:800;transition:.25s ease;cursor:pointer;
+.card-top {display:flex;justify-content:space-between;gap:8px;font-size:11px;color:#bfc2c2}
+.badge {font-size:9px;color:#50d6a1;border:1px solid #50d6a144;border-radius:50px;padding:5px 8px}
+.market-card strong {display:block;font:700 25px Manrope,sans-serif;margin:22px 0 8px}
+.market-card small {font-size:11px;color:#aeb3b3}
+.progress {height:4px;background:#29251a;border-radius:5px;margin-top:19px;overflow:hidden}
+.progress i {display:block;height:100%;background:linear-gradient(90deg,#8e6419,#f5d171)}
+.brand-story {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:45px;
+  background:radial-gradient(ellipse at 80% 50%,#6c4b161a,transparent 50%);
 }
-.btn-primary{background:linear-gradient(120deg,var(--gold2),var(--gold));color:#17130a}
-.btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 35px #d9b66c2b}
-.btn-ghost{border-color:var(--line);background:rgba(255,255,255,.035);color:var(--text)}
-.btn-ghost:hover{border-color:#d9b66c88;background:#d9b66c0d}
-.arrow{font-size:17px;line-height:1}
-.pill{
- display:inline-flex;align-items:center;gap:8px;padding:7px 11px;
- border:1px solid var(--line);border-radius:99px;
- background:rgba(255,255,255,.035);font:10px "DM Mono",monospace;
- letter-spacing:.7px;color:#d2d3ce;
+.brand-story ul {list-style:none;margin-top:20px}
+.brand-story li {font-size:13px;color:#dedfdb;margin:15px 0}
+.brand-story li:before {content:"↗";color:var(--gold-light);margin-right:12px}
+.brand-card {
+  border:1px solid #82672f;
+  border-radius:20px;
+  padding:30px;
+  background:linear-gradient(145deg,#171612,#080909);
 }
-.dot{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 12px #9bd5ad66}
-.gold-dot{background:var(--gold);box-shadow:0 0 12px #d9b66c77}
-
-/* NAVIGATION */
-.nav{
- position:fixed;top:0;left:0;right:0;z-index:50;
- border-bottom:1px solid transparent;transition:.3s;
+.brand-card .large-mark {font:800 80px/.95 Manrope,sans-serif;letter-spacing:-8px;color:var(--gold);text-shadow:0 0 30px #e4b34720}
+.brand-card h3 {font:700 22px Manrope,sans-serif;margin:22px 0 10px}
+.brand-card p {font-size:13px;line-height:1.8;color:#b9bdbd}
+.cta {
+  margin:0 4% 60px;
+  padding:35px;
+  border:1px solid #a98236;
+  border-radius:19px;
+  background:linear-gradient(100deg,#1a160c,#0b0c0c 60%,#1a1409);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
 }
-.nav.scrolled{background:rgba(8,9,9,.82);backdrop-filter:blur(22px);border-color:var(--line)}
-.nav-inner{height:78px;display:flex;align-items:center;justify-content:space-between;gap:25px}
-.brand{display:flex;align-items:center;gap:11px;flex-shrink:0}
-.brand-mark{
- width:39px;height:39px;display:grid;place-items:center;border-radius:13px;
- border:1px solid #d9b66c70;color:var(--gold);
- font-size:17px;font-weight:800;letter-spacing:-2px;
- background:linear-gradient(135deg,#d9b66c20,#ffffff04);
- box-shadow:inset 0 1px #ffffff15;
+.cta h2 {font-size:clamp(24px,3vw,36px);margin:10px 0}
+.cta p {font-size:12px;color:#bfc0bc}
+footer {
+  padding:23px 4%;
+  border-top:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;
+  gap:20px;flex-wrap:wrap;
+  color:#aaa;font-size:9px;letter-spacing:1.5px;
 }
-.brand-name{font-size:16px;font-weight:800;letter-spacing:2px}
-.brand-sub{font:9px "DM Mono",monospace;color:var(--muted);letter-spacing:1.4px}
-.nav-links{display:flex;align-items:center;gap:27px}
-.nav-links a{font-size:11px;color:#b9bbb8;transition:.2s}
-.nav-links a:hover,.nav-links a.active{color:var(--gold)}
-.nav-actions{display:flex;align-items:center;gap:12px}
-.nav-actions .btn{padding:11px 17px}
-.menu-toggle{display:none;background:none;border:1px solid var(--line);color:white;border-radius:12px;padding:10px}
-
-/* HERO */
-.hero{min-height:800px;padding:155px 0 82px;display:flex;align-items:center;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:25px}
-.hero-copy{position:relative;z-index:2}
-.hero .eyebrow{margin-bottom:25px}
-.hero h1{max-width:700px}
-.hero h1 .outline{
- color:transparent;-webkit-text-stroke:1px var(--gold);
+.footer-logo {font:800 24px Manrope,sans-serif;color:var(--gold-light);letter-spacing:-1px}
+.footer-tag {color:#e2c56f}
+.disclaimer {padding:0 4% 22px;color:#747777;font-size:10px;line-height:1.6}
+@keyframes orbit {to{transform:rotate(335deg) scaleY(.72)}}
+@media(max-width:1050px) {
+  nav {gap:13px}
+  .brand-message {display:none}
+  .market-change {display:none}
+  .quick-links {gap:10px}
+  .tile {padding:15px 12px}
 }
-.hero h1 .changing{display:inline-block;color:var(--gold2);min-width:1px}
-.hero-desc{font-size:15px;max-width:475px;margin:25px 0 30px;line-height:1.9}
-.hero-buttons{display:flex;flex-wrap:wrap;gap:12px}
-.hero-meta{display:flex;gap:28px;flex-wrap:wrap;margin-top:38px}
-.meta-item{border-left:1px solid var(--line);padding-left:13px}
-.meta-item strong{display:block;font-size:14px;font-weight:600}
-.meta-item span{font:9px "DM Mono",monospace;color:var(--muted);letter-spacing:1px}
-.hero-visual{position:relative;min-height:480px;display:grid;place-items:center;perspective:1000px}
-.orb{
- width:min(390px,85vw);aspect-ratio:1;border-radius:50%;position:relative;
- background:radial-gradient(circle at 34% 25%,#d9b66c35,transparent 23%),
- radial-gradient(circle at 50% 50%,#1d201b 0%,#0d0f0e 55%,#070808 73%);
- border:1px solid #d9b66c28;
- box-shadow:0 0 100px #d9b66c0b,inset -30px -30px 80px #000;
- animation:float 8s ease-in-out infinite;
+@media(max-width:760px) {
+  header {height:72px;padding:0 5%}
+  .logo-name {font-size:30px}
+  .brand-divider,.brand-message {display:none}
+  .menu-button {display:block}
+  nav {
+    display:none;position:absolute;top:71px;left:0;right:0;
+    background:#080909;border-bottom:1px solid var(--border);
+    padding:12px 5% 20px;flex-direction:column;align-items:stretch;gap:0
+  }
+  nav.open {display:flex}
+  nav a {padding:13px 0;border-bottom:1px solid #ffffff0d}
+  nav .button {margin-top:12px}
+  .hero {min-height:640px;padding:42px 6% 270px;display:block}
+  .hero:before {background:linear-gradient(180deg,#050505 0%,#050505f3 39%,#05050565 100%)}
+  h1 {font-size:clamp(54px,14vw,76px);letter-spacing:-3px;margin:22px 0}
+  .hero-description {font-size:14px}
+  .hero-art {width:100%;height:320px;right:-13%;top:auto;bottom:-5%;opacity:.82}
+  .ogx-mark {font-size:clamp(95px,25vw,145px)}
+  .orbit {width:280px}
+  .hero-side-note {left:auto;right:6%;top:auto;bottom:30px;padding-left:12px;font-size:9px}
+  .hero-side-note strong {font-size:15px}
+  .art-label {font-size:8px;right:23%;bottom:14%}
+  .hero-buttons .button {padding:12px 15px;font-size:11px}
+  .market-strip {grid-template-columns:repeat(2,1fr);padding:10px 4%;gap:5px}
+  .market-item {padding:9px 4px;border:0;border-bottom:1px solid #ffffff10}
+  .market-symbol {width:30px;height:30px}
+  .market-note {grid-column:1/-1;margin:5px 0}
+  .quick-links {grid-template-columns:repeat(2,1fr);gap:11px;padding:21px 4%}
+  .tile {min-height:150px}
+  .tile:last-child {grid-column:1/-1}
+  .section {padding:52px 5%}
+  .section-heading {display:block}
+  .section-heading p {margin-top:12px}
+  .market-cards {grid-template-columns:1fr}
+  .brand-story {grid-template-columns:1fr;gap:24px}
+  .brand-card .large-mark {font-size:72px}
+  .cta {display:block;margin:0 4% 42px;padding:25px 21px}
+  .cta .button {margin-top:20px}
 }
-.orb:before,.orb:after{
- content:"";position:absolute;inset:8%;border:1px solid #d9b66c33;border-radius:50%;
- transform:rotate(-25deg) scaleX(1.12);
-}
-.orb:after{inset:-7%;transform:rotate(57deg) scaleX(.65);border-color:#ffffff16}
-.orb-core{
- position:absolute;inset:25%;border-radius:50%;
- background:radial-gradient(circle at 30% 25%,#f4dfaa45,transparent 35%),linear-gradient(135deg,#24241d,#0a0b0a);
- border:1px solid #d9b66c44;box-shadow:0 0 70px #d9b66c14,inset 0 0 45px #d9b66c0c;
- display:grid;place-items:center;
-}
-.orb-logo{font-size:clamp(42px,6vw,70px);font-weight:800;letter-spacing:-8px;color:var(--gold2);text-shadow:0 0 40px #d9b66c25}
-.orb-logo span{font-size:.6em;letter-spacing:-3px}
-.orbit-dot{position:absolute;top:15%;right:15%;width:12px;height:12px;background:var(--gold2);border-radius:50%;box-shadow:0 0 25px var(--gold)}
-.float-card{
- position:absolute;padding:15px 17px;border-radius:18px;min-width:155px;
- animation:float 7s ease-in-out infinite;
-}
-.float-card small{display:block;font:9px "DM Mono",monospace;letter-spacing:1.3px;color:var(--muted)}
-.float-card strong{display:block;font-size:18px;margin:4px 0}
-.float-card span{font-size:10px;color:var(--green)}
-.float-card.one{top:12%;left:-2%}
-.float-card.two{bottom:12%;right:-2%;animation-delay:-3s}
-.visual-note{position:absolute;bottom:0;left:50%;transform:translateX(-50%);font:9px "DM Mono",monospace;color:#777;white-space:nowrap;letter-spacing:1px}
-@keyframes float{0%,100%{transform:translateY(0) rotateY(0)}50%{transform:translateY(-12px) rotateY(3deg)}}
-.hero-bottom{position:absolute;bottom:0;left:0;right:0}
-.hero-bottom .wrap{display:flex;justify-content:space-between;align-items:center;padding:17px 0;border-top:1px solid var(--line)}
-.hero-bottom span{font:9px "DM Mono",monospace;color:#858784;letter-spacing:1.2px}
-.scroll-cue{display:flex;gap:10px;align-items:center}
-.scroll-line{width:35px;height:1px;background:var(--gold)}
-
-/* TICKER */
-.ticker{border-block:1px solid var(--line);overflow:hidden;background:#ffffff03}
-.ticker-track{display:flex;width:max-content;animation:marquee 34s linear infinite}
-.ticker:hover .ticker-track{animation-play-state:paused}
-.ticker-item{padding:19px 30px;display:flex;align-items:center;gap:13px;border-right:1px solid var(--line);white-space:nowrap}
-.ticker-item b{font-size:11px}
-.ticker-item span{font:10px "DM Mono",monospace;color:var(--muted)}
-.ticker-item em{font:10px "DM Mono",monospace;color:var(--green);font-style:normal}
-@keyframes marquee{to{transform:translateX(-50%)}}
-
-/* MARKETS */
-.market-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.market-card{padding:21px;border-radius:20px;transition:.3s;min-width:0}
-.market-card:hover{transform:translateY(-5px);border-color:#d9b66c55}
-.coin-row{display:flex;justify-content:space-between;align-items:center;gap:8px}
-.coin-icon{width:36px;height:36px;display:grid;place-items:center;border-radius:12px;background:#ffffff09;border:1px solid var(--line);font-size:16px}
-.coin-name{margin-right:auto}
-.coin-name strong{display:block;font-size:12px}
-.coin-name small{font:9px "DM Mono",monospace;color:var(--muted)}
-.market-card .price{font-size:23px;font-weight:700;letter-spacing:-1px;margin-top:25px}
-.market-card .change{font:10px "DM Mono",monospace;color:var(--green);margin-top:3px}
-.spark{width:100%;height:48px;margin-top:16px;overflow:visible}
-.spark path{fill:none;stroke:var(--green);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.spark .shade{stroke:none;fill:url(#sparkFill)}
-.market-foot{display:flex;justify-content:space-between;align-items:center;margin-top:27px;gap:12px}
-.market-foot p{font-size:11px}
-.text-link{color:var(--gold);font-size:11px;font-weight:700;display:inline-flex;gap:8px;align-items:center}
-.text-link:hover{gap:13px}
-.notice{font-size:10px;color:#81837f;margin-top:22px;line-height:1.8}
-
-/* EXPERIENCE */
-.experience{padding-top:50px}
-.experience-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.experience-card{padding:35px;border-radius:var(--radius);min-height:285px;position:relative;overflow:hidden}
-.experience-card h3{margin:22px 0 12px;max-width:360px}
-.experience-card p{font-size:13px;max-width:380px}
-.card-number{font:10px "DM Mono",monospace;color:var(--gold);letter-spacing:2px}
-.card-art{position:absolute;right:-25px;bottom:-42px;width:190px;height:190px;opacity:.7}
-.card-art svg{width:100%;height:100%}
-.experience-card .text-link{margin-top:23px}
-.experience-card.large{grid-row:span 2;min-height:100%;display:flex;flex-direction:column;justify-content:space-between}
-.large-art{margin:40px auto 0;width:min(100%,350px)}
-.large-art svg{width:100%;height:auto;overflow:visible}
-
-/* SIGNALS */
-.signal-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:45px;align-items:center}
-.signal-copy h2{margin:20px 0}
-.signal-copy>p{font-size:14px;line-height:1.9;max-width:430px}
-.check-list{display:grid;gap:15px;margin:27px 0}
-.check-item{display:flex;gap:12px;align-items:flex-start;font-size:12px;color:#d2d3cf}
-.check{width:20px;height:20px;flex-shrink:0;border:1px solid #d9b66c66;color:var(--gold);border-radius:50%;display:grid;place-items:center;font-size:11px}
-.signal-board{border-radius:27px;padding:26px;transform-style:preserve-3d;transition:transform .2s}
-.board-top{display:flex;justify-content:space-between;gap:15px;align-items:center;padding-bottom:20px;border-bottom:1px solid var(--line)}
-.board-top strong{font-size:13px}
-.board-top small{display:block;color:var(--muted);font:9px "DM Mono",monospace;margin-top:4px}
-.demo-label{font:9px "DM Mono",monospace;color:var(--gold);border:1px solid #d9b66c44;border-radius:7px;padding:6px 8px}
-.signal-asset{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
-.signal-asset h3{font-size:24px}
-.signal-asset p{font-size:10px;margin-top:5px}
-.side-tag{border-radius:8px;background:#9bd5ad13;color:var(--green);padding:8px 10px;font:10px "DM Mono",monospace}
-.signal-chart{width:100%;height:150px;display:block;background:linear-gradient(180deg,#d9b66c0b,transparent);border-radius:12px}
-.signal-chart .gridline{stroke:#ffffff0d;stroke-width:1}
-.signal-chart .chartline{fill:none;stroke:var(--gold);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:650;stroke-dashoffset:650;animation:draw 3s ease forwards}
-.signal-chart .chartfill{fill:url(#chartGradient)}
-@keyframes draw{to{stroke-dashoffset:0}}
-.levels{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}
-.level{padding:13px 10px;border:1px solid var(--line);border-radius:12px;background:#ffffff03}
-.level small{font:8px "DM Mono",monospace;color:var(--muted);display:block;letter-spacing:.6px}
-.level strong{display:block;font:12px "DM Mono",monospace;margin-top:7px}
-.level.entry strong{color:var(--gold)}
-.level.stop strong{color:var(--red)}
-.level.target strong{color:var(--green)}
-.board-bottom{display:flex;gap:8px;align-items:flex-start;margin-top:18px;font-size:10px;color:var(--muted)}
-
-/* SERVICES */
-.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.service-card{padding:29px;border-radius:22px;display:flex;flex-direction:column;min-height:330px;transition:.3s}
-.service-card:hover{transform:translateY(-5px);border-color:#d9b66c55}
-.service-icon{width:45px;height:45px;border-radius:15px;display:grid;place-items:center;border:1px solid #d9b66c55;color:var(--gold);font-size:20px}
-.service-card h3{margin:28px 0 13px}
-.service-card p{font-size:12px;line-height:1.9}
-.service-card .text-link{margin-top:auto;padding-top:28px}
-.service-card.featured{background:linear-gradient(150deg,#d9b66c17,#ffffff04);border-color:#d9b66c55}
-
-/* MANIFESTO */
-.manifesto{padding:95px 0}
-.manifesto-box{padding:clamp(30px,6vw,80px);border-radius:30px;position:relative;overflow:hidden}
-.manifesto-box:after{
- content:"OGX";position:absolute;right:-25px;bottom:-100px;
- font-size:clamp(180px,32vw,410px);font-weight:800;letter-spacing:-.12em;
- line-height:1;color:#d9b66c08;pointer-events:none;
-}
-.manifesto h2{max-width:850px;position:relative;z-index:1}
-.manifesto h2 span{color:var(--gold)}
-.manifesto p{max-width:540px;margin-top:25px;font-size:14px;line-height:1.9;position:relative;z-index:1}
-.manifesto .btn{margin-top:28px;position:relative;z-index:1}
-
-/* PROCESS */
-.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
-.process-step{padding:25px 22px;border-left:1px solid var(--line);position:relative}
-.process-step:first-child{border-left:0}
-.process-step .num{font:11px "DM Mono",monospace;color:var(--gold)}
-.process-step h3{font-size:19px;margin:22px 0 12px}
-.process-step p{font-size:12px;line-height:1.9}
-
-/* FAQ */
-.faq-layout{display:grid;grid-template-columns:.7fr 1.3fr;gap:70px}
-.faq-layout h2{margin:18px 0}
-.faq-list{border-top:1px solid var(--line)}
-.faq-item{border-bottom:1px solid var(--line)}
-.faq-question{
- display:flex;justify-content:space-between;align-items:center;gap:20px;width:100%;
- padding:22px 0;background:none;border:0;color:var(--text);text-align:left;
- font-size:13px;font-weight:600;cursor:pointer;
-}
-.faq-question span:last-child{font-size:20px;color:var(--gold);transition:.2s}
-.faq-answer{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s ease}
-.faq-answer>div{overflow:hidden}
-.faq-answer p{font-size:12px;line-height:1.9;padding-bottom:0;transition:padding .3s}
-.faq-item.open .faq-answer{grid-template-rows:1fr}
-.faq-item.open .faq-answer p{padding-bottom:22px}
-.faq-item.open .faq-question span:last-child{transform:rotate(45deg)}
-
-/* CONTACT */
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:start}
-.contact-copy h2{margin:20px 0}
-.contact-copy>p{font-size:14px;line-height:1.9;max-width:440px}
-.contact-options{display:grid;gap:12px;margin-top:30px}
-.contact-option{display:flex;align-items:center;gap:14px;padding:16px;border:1px solid var(--line);border-radius:15px;background:#ffffff03}
-.contact-option .service-icon{width:39px;height:39px;font-size:16px}
-.contact-option strong{font-size:12px;display:block}
-.contact-option small{font-size:10px;color:var(--muted)}
-.contact-form{padding:29px;border-radius:24px}
-.contact-form h3{margin-bottom:7px}
-.contact-form>p{font-size:11px;margin-bottom:23px}
-.field{margin-bottom:16px}
-.field label{display:block;font:9px "DM Mono",monospace;color:#b6b7b3;letter-spacing:1px;margin-bottom:8px}
-.field input,.field select,.field textarea{
- width:100%;background:#ffffff05;border:1px solid var(--line);border-radius:12px;
- padding:13px 14px;color:var(--text);font:12px Manrope,sans-serif;outline:none;
-}
-.field input:focus,.field select:focus,.field textarea:focus{border-color:#d9b66c88}
-.field select option{background:#101110;color:white}
-.field textarea{resize:vertical;min-height:100px}
-.contact-form .btn{width:100%}
-.form-note{font-size:10px;color:var(--muted);margin-top:13px;line-height:1.8}
-
-/* FOOTER */
-footer{padding:35px 0 24px;border-top:1px solid var(--line)}
-.footer-top{display:flex;justify-content:space-between;align-items:center;gap:25px;padding-bottom:30px}
-.footer-links{display:flex;gap:22px;flex-wrap:wrap}
-.footer-links a{font-size:10px;color:var(--muted)}
-.footer-links a:hover{color:var(--gold)}
-.footer-bottom{display:flex;justify-content:space-between;gap:20px;padding-top:20px;border-top:1px solid var(--line)}
-.footer-bottom p{font-size:9px;line-height:1.8;max-width:750px}
-.footer-bottom span{font:9px "DM Mono",monospace;color:#777;white-space:nowrap}
-.toast{
- position:fixed;bottom:24px;left:50%;transform:translate(-50%,20px);
- z-index:100;background:#e7d4a5;color:#15120a;border-radius:12px;padding:13px 18px;
- font-size:12px;font-weight:700;opacity:0;pointer-events:none;transition:.25s;
- max-width:calc(100% - 30px);text-align:center;
-}
-.toast.show{opacity:1;transform:translate(-50%,0)}
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
-.reveal.visible{opacity:1;transform:translateY(0)}
-.delay-1{transition-delay:.1s}.delay-2{transition-delay:.2s}.delay-3{transition-delay:.3s}
-
-/* RESPONSIVE */
-@media(max-width:950px){
- .nav-links{gap:15px}
- .nav-links a{font-size:10px}
- .nav-actions .btn{padding:10px 13px}
- .hero-grid{grid-template-columns:1fr .85fr}
- .hero-visual{min-height:400px}
- .orb{width:300px}
- .float-card.one{left:-4%}.float-card.two{right:-4%}
- .market-grid{grid-template-columns:repeat(2,1fr)}
- .signal-layout{gap:25px}
- .services-grid{grid-template-columns:repeat(2,1fr)}
- .services-grid .service-card:last-child{grid-column:span 2;min-height:260px}
- .faq-layout{gap:35px}
-}
-@media(max-width:720px){
- .wrap{width:min(100% - 34px,var(--max))}
- section{padding:78px 0}
- .nav-inner{height:69px}
- .menu-toggle{display:block}
- .nav-actions .btn{display:none}
- .nav-links{
-  display:none;position:absolute;top:69px;left:0;right:0;padding:18px 22px 24px;
-  background:rgba(8,9,9,.97);backdrop-filter:blur(20px);
-  border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0;
- }
- .nav-links.open{display:flex}
- .nav-links a{font-size:13px;padding:13px 4px;border-bottom:1px solid #ffffff0a}
- .nav-links a:last-child{border:0}
- .hero{padding:125px 0 70px;min-height:auto}
- .hero-grid{grid-template-columns:1fr;gap:5px}
- .hero h1{font-size:clamp(48px,12vw,76px)}
- .hero-desc{font-size:13px;margin:20px 0 24px}
- .hero-meta{gap:20px;margin-top:27px}
- .hero-visual{min-height:365px;margin-top:10px}
- .orb{width:min(300px,75vw)}
- .float-card{padding:12px;min-width:130px}
- .float-card strong{font-size:15px}
- .float-card.one{top:8%;left:0}
- .float-card.two{bottom:8%;right:0}
- .hero-bottom{position:relative;margin-top:0}
- .hero-bottom .wrap{gap:10px;flex-wrap:wrap}
- .hero-bottom span{font-size:8px}
- .section-head{display:block;margin-bottom:28px}
- .section-head p{margin-top:18px}
- .market-card{padding:16px}
- .market-card .price{font-size:20px}
- .experience-grid{grid-template-columns:1fr}
- .experience-card.large{grid-row:auto;min-height:420px}
- .experience-card{padding:27px}
- .signal-layout{grid-template-columns:1fr}
- .signal-board{padding:19px}
- .signal-copy{margin-bottom:10px}
- .services-grid{grid-template-columns:1fr}
- .services-grid .service-card:last-child{grid-column:auto}
- .service-card{min-height:275px}
- .manifesto{padding:50px 0}
- .manifesto-box{border-radius:22px}
- .process-grid{grid-template-columns:1fr 1fr}
- .process-step{padding:20px 15px;border-bottom:1px solid var(--line)}
- .process-step:nth-child(odd){border-left:0}
- .process-step h3{font-size:17px}
- .faq-layout{grid-template-columns:1fr;gap:20px}
- .contact-grid{grid-template-columns:1fr;gap:30px}
- .contact-form{padding:22px}
- .footer-top{align-items:flex-start;flex-direction:column}
- .footer-bottom{flex-direction:column}
- .footer-bottom span{white-space:normal}
-}
-@media(max-width:390px){
- .brand-name{font-size:14px}
- .hero h1{font-size:46px}
- .market-grid{gap:9px}
- .market-card{padding:13px}
- .market-card .price{font-size:18px}
- .levels{gap:5px}
- .level{padding:11px 7px}
- .level strong{font-size:10px}
-}
-@media(prefers-reduced-motion:reduce){
- *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
- .reveal{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce) {
+  *,*:before,*:after {animation:none!important;scroll-behavior:auto!important;transition:none!important}
 }
 </style>
 </head>
-
 <body>
 
-<header class="nav" id="navbar">
- <div class="wrap nav-inner">
-  <a class="brand" href="#home" aria-label="OGX home">
-   <div class="brand-mark">O<span style="font-size:12px">X</span></div>
-   <div>
-    <div class="brand-name">OGX</div>
-    <div class="brand-sub">OGA EXCHANGE</div>
-   </div>
+<header>
+  <a class="brand" href="#home" aria-label="OGAEX home">
+    <div>
+      <div class="logo-name">OGAEX</div>
+      <div class="logo-caption">OGA EXCHANGE</div>
+    </div>
+    <div class="brand-divider"></div>
+    <div class="brand-message">TRADE&nbsp; | &nbsp;LEARN&nbsp; | &nbsp;GROW</div>
   </a>
 
-  <nav class="nav-links" id="navLinks" aria-label="Main navigation">
-   <a href="#markets">Markets</a>
-   <a href="#experience">Platform</a>
-   <a href="#signals">Signals</a>
-   <a href="#services">Services</a>
-   <a href="#intelligence">Approach</a>
-   <a href="#contact">Contact</a>
-  </nav>
+  <button class="menu-button" id="menuButton" aria-label="Toggle navigation" aria-expanded="false">☰</button>
 
-  <div class="nav-actions">
-   <a class="btn btn-primary" href="#contact">Start a conversation <span class="arrow">↗</span></a>
-   <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
-  </div>
- </div>
+  <nav id="navigation">
+    <a href="#home">Home</a>
+    <a href="#markets">Markets</a>
+    <a href="#platform">Platform</a>
+    <a href="#signals">Signals</a>
+    <a href="#services">Services</a>
+    <a href="#insights">Insights</a>
+    <a href="#about">About</a>
+    <a class="button button-gold" href="#contact">Get Started ↗</a>
+  </nav>
 </header>
 
 <main>
-<!-- HERO -->
-<section class="hero" id="home">
- <div class="wrap hero-grid">
-  <div class="hero-copy">
-   <div class="eyebrow">A sharper way to engage the markets</div>
-   <h1>
-    Think beyond<br>
-    the <span class="outline">noise.</span><br>
-    <span class="changing" id="changingWord">Trade.</span>
-   </h1>
-   <p class="hero-desc">
-    Markets move fast. Decisions should be deliberate.
-    OGX brings trading intelligence, structured market insights
-    and a risk-aware mindset into one focused experience.
-   </p>
-   <div class="hero-buttons">
-    <a class="btn btn-primary" href="#services">Explore our services <span class="arrow">↗</span></a>
-    <a class="btn btn-ghost" href="#markets">Explore the markets <span class="arrow">↓</span></a>
-   </div>
-   <div class="hero-meta">
-    <div class="meta-item"><strong>Strategy first</strong><span>NOT HYPE</span></div>
-    <div class="meta-item"><strong>Risk aware</strong><span>DISCIPLINE ALWAYS</span></div>
-    <div class="meta-item"><strong>Built for clarity</strong><span>INTELLIGENCE OVER NOISE</span></div>
-   </div>
-  </div>
-
-  <div class="hero-visual" aria-label="Abstract animated OGX visual">
-   <div class="orb">
-    <div class="orb-core"><div class="orb-logo">OG<span>X</span></div></div>
-    <div class="orbit-dot"></div>
-   </div>
-   <div class="float-card one glass">
-    <small>OUR PRINCIPLE</small>
-    <strong>Clarity > noise</strong>
-    <span>◈ Intentional decisions</span>
-   </div>
-   <div class="float-card two glass">
-    <small>RISK APPROACH</small>
-    <strong>Protect capital</strong>
-    <span>↗ Discipline before action</span>
-   </div>
-   <div class="visual-note">ANALYSE · PLAN · EXECUTE WITH DISCIPLINE</div>
-  </div>
- </div>
- <div class="hero-bottom">
-  <div class="wrap">
-   <span>INDEPENDENT TRADING INTELLIGENCE EXPERIENCE</span>
-   <div class="scroll-cue"><span>SCROLL TO EXPLORE</span><div class="scroll-line"></div></div>
-  </div>
- </div>
-</section>
-
-<!-- MOVING TICKER: ILLUSTRATIVE -->
-<div class="ticker" aria-label="Illustrative market symbols">
- <div class="ticker-track">
-  <div class="ticker-item"><b>BTC / USDT</b><span>BITCOIN</span><em>MARKET WATCH</em></div>
-  <div class="ticker-item"><b>ETH / USDT</b><span>ETHEREUM</span><em>MARKET WATCH</em></div>
-  <div class="ticker-item"><b>SOL / USDT</b><span>SOLANA</span><em>MARKET WATCH</em></div>
-  <div class="ticker-item"><b>BNB / USDT</b><span>BNB</span><em>MARKET WATCH</em></div>
-  <div class="ticker-item"><b>BTC / USDT</b><span>BITCOIN</span><em>MARKET WATCH</em></div>
-  <div class="ticker-item"><b>ETH / USDT</b><span>ETHEREUM</span><em>MARKET WATCH</em></div>
-  <div class="ticker-item"><b>SOL / USDT</b><span>SOLANA</span><em>MARKET WATCH</em></div>
-  <div class="ticker-item"><b>BNB / USDT</b><span>BNB</span><em>MARKET WATCH</em></div>
- </div>
-</div>
-
-<!-- MARKETS -->
-<section id="markets">
- <div class="wrap">
-  <div class="section-head reveal">
-   <div>
-    <div class="eyebrow">The market landscape</div>
-    <h2>Observe first.<br><span class="gold">Act with purpose.</span></h2>
-   </div>
-   <p>A focused market-watch interface designed to make important information easier to scan. The sample figures below are illustrative placeholders, not current market quotes.</p>
-  </div>
-
-  <div class="market-grid">
-   <article class="market-card glass reveal">
-    <div class="coin-row">
-     <div class="coin-icon">₿</div>
-     <div class="coin-name"><strong>Bitcoin</strong><small>BTC / USDT</small></div>
-     <span class="pill">01</span>
+  <section class="hero" id="home">
+    <div class="hero-copy">
+      <div class="eyebrow">OGAEX &nbsp;↗&nbsp; POWERED BY OGX</div>
+      <h1>Trade with<span>Clarity.</span></h1>
+      <p class="hero-description">
+        OGAEX is Oga Exchange — a trading intelligence brand built for the modern boss.
+        Strategy, discipline and opportunity, brought into one place.
+      </p>
+      <div class="hero-buttons">
+        <a class="button button-gold" href="#markets">Explore Markets →</a>
+        <a class="button button-outline" href="#community">♟ &nbsp; Join the OGAEX Community</a>
+      </div>
     </div>
-    <div class="price">$67,420.80</div>
-    <div class="change">Sample interface value</div>
-    <svg class="spark" viewBox="0 0 180 48" preserveAspectRatio="none" aria-hidden="true">
-     <path d="M0 38 L15 30 L27 35 L42 18 L56 24 L72 12 L86 22 L103 15 L117 28 L133 17 L146 21 L161 8 L180 13"/>
-    </svg>
-   </article>
 
-   <article class="market-card glass reveal delay-1">
-    <div class="coin-row">
-     <div class="coin-icon">Ξ</div>
-     <div class="coin-name"><strong>Ethereum</strong><small>ETH / USDT</small></div>
-     <span class="pill">02</span>
+    <div class="hero-side-note">
+      <small>OGA<br>EXCHANGE</small>
+      <strong>THE<br>BOSS<br>MINDSET</strong>
+      <small>BIGGER VISION.<br>SMARTER MOVES.<br>LONGER LEGACY.</small>
     </div>
-    <div class="price">$3,520.40</div>
-    <div class="change">Sample interface value</div>
-    <svg class="spark" viewBox="0 0 180 48" preserveAspectRatio="none" aria-hidden="true">
-     <path d="M0 13 L14 21 L29 16 L43 27 L57 20 L73 32 L87 18 L103 23 L118 12 L135 19 L150 9 L165 14 L180 6"/>
-    </svg>
-   </article>
 
-   <article class="market-card glass reveal delay-2">
-    <div class="coin-row">
-     <div class="coin-icon">◎</div>
-     <div class="coin-name"><strong>Solana</strong><small>SOL / USDT</small></div>
-     <span class="pill">03</span>
+    <div class="hero-art" aria-hidden="true">
+      <div class="orbit"></div>
+      <div class="ogx-mark">OGX</div>
+      <div class="light-trail"></div>
+      <div class="art-label">BOSS MINDSET · UPWARD BY DESIGN</div>
     </div>
-    <div class="price">$148.60</div>
-    <div class="change">Sample interface value</div>
-    <svg class="spark" viewBox="0 0 180 48" preserveAspectRatio="none" aria-hidden="true">
-     <path d="M0 32 L15 25 L30 29 L44 12 L60 17 L74 9 L90 19 L105 14 L119 25 L135 18 L150 24 L166 11 L180 15"/>
-    </svg>
-   </article>
+  </section>
 
-   <article class="market-card glass reveal delay-3">
-    <div class="coin-row">
-     <div class="coin-icon">◆</div>
-     <div class="coin-name"><strong>BNB</strong><small>BNB / USDT</small></div>
-     <span class="pill">04</span>
+  <section class="market-strip" aria-label="Illustrative market snapshot">
+    <div class="market-item">
+      <div class="market-symbol">₿</div>
+      <div><div class="market-name">BTC / USDT</div><div class="market-price">$67,420.80</div></div>
+      <div class="market-change">▲ 2.34%</div>
     </div>
-    <div class="price">$605.20</div>
-    <div class="change">Sample interface value</div>
-    <svg class="spark" viewBox="0 0 180 48" preserveAspectRatio="none" aria-hidden="true">
-     <path d="M0 35 L15 28 L30 32 L46 22 L61 26 L77 14 L91 22 L108 10 L123 18 L138 11 L153 16 L166 6 L180 10"/>
-    </svg>
-   </article>
-  </div>
-  <p class="notice mono">DESIGN PREVIEW · ALL DISPLAYED PRICES AND CHARTS ARE DEMONSTRATION CONTENT. LIVE MARKET DATA HAS NOT BEEN CONNECTED.</p>
-  <div class="market-foot">
-   <p>Follow the landscape. Never confuse a snapshot with certainty.</p>
-   <a class="text-link" href="#intelligence">Our approach <span class="arrow">↗</span></a>
-  </div>
- </div>
-</section>
+    <div class="market-item">
+      <div class="market-symbol">◆</div>
+      <div><div class="market-name">ETH / USDT</div><div class="market-price">$3,520.40</div></div>
+      <div class="market-change">▲ 1.87%</div>
+    </div>
+    <div class="market-item">
+      <div class="market-symbol">≋</div>
+      <div><div class="market-name">SOL / USDT</div><div class="market-price">$148.60</div></div>
+      <div class="market-change">▲ 3.21%</div>
+    </div>
+    <div class="market-item">
+      <div class="market-symbol">✥</div>
+      <div><div class="market-name">BNB / USDT</div><div class="market-price">$605.20</div></div>
+      <div class="market-change">▲ 1.12%</div>
+    </div>
+    <div class="market-note">
+      <span style="font-size:22px;color:#e7c05c">↗</span>
+      <div><strong>Market snapshot</strong>Illustrative values — not live data.</div>
+    </div>
+  </section>
 
-<!-- PLATFORM EXPERIENCE -->
-<section id="experience" class="experience">
- <div class="wrap">
-  <div class="section-head reveal">
-   <div>
-    <div class="eyebrow">One identity. Multiple capabilities.</div>
-    <h2>Everything begins<br>with <span class="gold">a better process.</span></h2>
-   </div>
-   <p>A clear destination for market awareness, trading education, structured insights and service enquiries.</p>
-  </div>
+  <section class="quick-links" id="services">
+    <article class="tile">
+      <div class="tile-icon">▥</div><h3>Markets</h3>
+      <p>Follow key assets and market movements with clarity.</p>
+      <a href="#markets">Explore →</a>
+    </article>
+    <article class="tile" id="signals">
+      <div class="tile-icon">⌁</div><h3>Trading Signals</h3>
+      <p>Structured trade ideas with risk levels and targets.</p>
+      <a href="#contact">Learn more →</a>
+    </article>
+    <article class="tile" id="platform">
+      <div class="tile-icon">◇</div><h3>Education</h3>
+      <p>Build knowledge. Trade smarter. Keep learning.</p>
+      <a href="#insights">Learn →</a>
+    </article>
+    <article class="tile">
+      <div class="tile-icon">♙</div><h3>Trading Services</h3>
+      <p>Explore trading support and market insights.</p>
+      <a href="#contact">Discover →</a>
+    </article>
+    <article class="tile" id="community">
+      <div class="tile-icon">▢</div><h3>Community</h3>
+      <p>Connect with OGAEX and ask about access.</p>
+      <a href="#contact">Get in touch →</a>
+    </article>
+  </section>
 
-  <div class="experience-grid">
-   <article class="experience-card glass large reveal">
+  <section class="section" id="markets">
+    <div class="section-heading">
+      <div>
+        <div class="section-label">A clearer view of the market</div>
+        <h2>Make decisions<br>with intention.</h2>
+      </div>
+      <p>Explore sample assets followed by active traders. The figures shown here are placeholders, not live market data or a promise of returns.</p>
+    </div>
+
+    <div class="market-cards">
+      <article class="market-card">
+        <div class="card-top"><span>Bitcoin · BTC/USDT</span><span class="badge">Illustrative</span></div>
+        <strong>$67,420.80</strong>
+        <small>Understand the trend. Define your risk.</small>
+        <div class="progress"><i style="width:73%"></i></div>
+      </article>
+      <article class="market-card">
+        <div class="card-top"><span>Ethereum · ETH/USDT</span><span class="badge">Illustrative</span></div>
+        <strong>$3,520.40</strong>
+        <small>Look beyond the noise and headlines.</small>
+        <div class="progress"><i style="width:58%"></i></div>
+      </article>
+      <article class="market-card">
+        <div class="card-top"><span>Solana · SOL/USDT</span><span class="badge">Illustrative</span></div>
+        <strong>$148.60</strong>
+        <small>Plan the trade before entering the market.</small>
+        <div class="progress"><i style="width:84%"></i></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section brand-story" id="about">
     <div>
-     <div class="card-number">01 / THE MINDSET</div>
-     <h3>Make your next move a considered one.</h3>
-     <p>Replace impulsive decisions with a defined process: understand the setup, identify the risk and know what would invalidate your idea.</p>
-     <a href="#intelligence" class="text-link">Explore our philosophy <span class="arrow">↗</span></a>
+      <div class="section-label">The meaning behind the name</div>
+      <h2>Oga is more than a title.<br>It’s a mindset.</h2>
+      <p class="body-copy">
+        In everyday Nigerian expression, “Oga” speaks to leadership, ownership and taking responsibility.
+        OGAEX turns that spirit into a market philosophy: think independently, respect risk and make decisions with purpose.
+      </p>
+      <ul>
+        <li><strong>OGAEX</strong> — Oga Exchange: the consumer-facing brand.</li>
+        <li><strong>OGX</strong> — the compact identity: bold, focused and built to move forward.</li>
+        <li><strong>The boss mindset</strong> — not hype or guaranteed wins, but clarity, discipline and accountability.</li>
+      </ul>
     </div>
-    <div class="large-art">
-     <svg viewBox="0 0 360 270" role="img" aria-label="Abstract golden orbital rings">
-      <defs><linearGradient id="ringGold"><stop stop-color="#d9b66c" stop-opacity=".08"/><stop offset=".5" stop-color="#f4dfaa"/><stop offset="1" stop-color="#d9b66c" stop-opacity=".1"/></linearGradient></defs>
-      <circle cx="180" cy="130" r="70" fill="#d9b66c05" stroke="#d9b66c33"/>
-      <ellipse cx="180" cy="130" rx="145" ry="48" transform="rotate(-30 180 130)" fill="none" stroke="url(#ringGold)" stroke-width="1.5"/>
-      <ellipse cx="180" cy="130" rx="145" ry="48" transform="rotate(55 180 130)" fill="none" stroke="#d9b66c40"/>
-      <ellipse cx="180" cy="130" rx="110" ry="90" transform="rotate(-65 180 130)" fill="none" stroke="#ffffff18"/>
-      <circle cx="282" cy="73" r="5" fill="#f4dfaa"/>
-      <circle cx="65" cy="170" r="3" fill="#d9b66c"/>
-      <circle cx="180" cy="130" r="19" fill="#d9b66c12" stroke="#d9b66c66"/>
-      <text x="180" y="136" text-anchor="middle" font-size="17" font-weight="bold" fill="#f4dfaa">X</text>
-     </svg>
+
+    <div class="brand-card">
+      <div class="large-mark">OGX↗</div>
+      <div class="section-label">The principle</div>
+      <h3>Think like a boss.<br>Move with a plan.</h3>
+      <p>OGX is the signature mark within OGAEX — a symbol of vision, strategy and upward ambition. OGAEX is where that mindset meets trading education, market insights and services.</p>
     </div>
-   </article>
+  </section>
 
-   <article class="experience-card glass reveal delay-1">
-    <div class="card-number">02 / MARKET AWARENESS</div>
-    <h3>See the structure, not just the movement.</h3>
-    <p>A clean market-watch experience that can be connected to live data as the platform develops.</p>
-    <a href="#markets" class="text-link">View market preview <span class="arrow">↗</span></a>
-    <div class="card-art">
-     <svg viewBox="0 0 200 200" aria-hidden="true">
-      <g stroke="#d9b66c" stroke-opacity=".45" fill="none">
-       <path d="M20 160V40 M48 140V65 M76 150V30 M104 115V50 M132 135V25 M160 90V15" stroke-width="1"/>
-       <path d="M14 120H27 M42 88H55 M70 73H83 M98 92H111 M126 60H139 M154 48H167" stroke-width="5" stroke-linecap="round"/>
-      </g>
-     </svg>
+  <section class="section" id="insights">
+    <div class="section-heading">
+      <div><div class="section-label">Knowledge before action</div><h2>Clarity is a competitive edge.</h2></div>
+      <p>Markets reward preparation, not confidence alone. Build a repeatable process, understand risk and keep learning.</p>
     </div>
-   </article>
-
-   <article class="experience-card glass reveal delay-2">
-    <div class="card-number">03 / LEARNING & INSIGHT</div>
-    <h3>Build understanding that lasts.</h3>
-    <p>Develop a stronger grasp of strategy, market behaviour, position sizing and risk management.</p>
-    <a href="#intelligence" class="text-link">Discover our approach <span class="arrow">↗</span></a>
-    <div class="card-art">
-     <svg viewBox="0 0 200 200" aria-hidden="true">
-      <circle cx="110" cy="100" r="65" fill="none" stroke="#d9b66c" stroke-opacity=".25"/>
-      <circle cx="110" cy="100" r="47" fill="none" stroke="#d9b66c" stroke-opacity=".45"/>
-      <circle cx="110" cy="100" r="28" fill="none" stroke="#d9b66c" stroke-opacity=".7"/>
-      <circle cx="110" cy="100" r="7" fill="#d9b66c"/>
-      <path d="M110 18V45 M110 155V182 M28 100H55 M165 100H192" stroke="#d9b66c" stroke-opacity=".55"/>
-     </svg>
+    <div class="market-cards">
+      <article class="market-card"><div class="section-label">01 · Strategy</div><strong style="font-size:21px">Plan your trade.</strong><small>Define entry, invalidation and exit before you commit.</small></article>
+      <article class="market-card"><div class="section-label">02 · Discipline</div><strong style="font-size:21px">Respect your risk.</strong><small>Protect capital. Avoid decisions driven by fear or greed.</small></article>
+      <article class="market-card"><div class="section-label">03 · Growth</div><strong style="font-size:21px">Learn consistently.</strong><small>Review outcomes and improve your process over time.</small></article>
     </div>
-   </article>
-  </div>
- </div>
-</section>
+  </section>
 
-<!-- SIGNALS -->
-<section id="signals">
- <div class="wrap signal-layout">
-  <div class="signal-copy reveal">
-   <div class="eyebrow">Structured trading insights</div>
-   <h2>Less guesswork.<br><span class="gold">More structure.</span></h2>
-   <p>A signal interface should communicate a trade idea clearly, including its assumptions, invalidation point and risk. It should never present an uncertain outcome as guaranteed.</p>
-   <div class="check-list">
-    <div class="check-item"><span class="check">✓</span><span>Clearly defined entry areas and trade direction.</span></div>
-    <div class="check-item"><span class="check">✓</span><span>Stop-loss and take-profit levels where applicable.</span></div>
-    <div class="check-item"><span class="check">✓</span><span>Context, risk awareness and a disciplined decision process.</span></div>
-    <div class="check-item"><span class="check">✓</span><span>Transparent terms before any paid subscription.</span></div>
-   </div>
-   <a href="#contact" class="btn btn-primary">Enquire about signals <span class="arrow">↗</span></a>
-  </div>
-
-  <div class="signal-board glass reveal delay-1" id="tiltCard">
-   <div class="board-top">
-    <div><strong>OGX / SIGNAL ROOM</strong><small>INTERFACE PREVIEW · NOT A LIVE SIGNAL</small></div>
-    <span class="demo-label">DEMO MODE</span>
-   </div>
-   <div class="signal-asset">
-    <div><h3>BTC <span class="muted">/ USDT</span></h3><p>Illustrative setup · For interface demonstration</p></div>
-    <span class="side-tag">LONG · DEMO</span>
-   </div>
-   <svg class="signal-chart" viewBox="0 0 500 150" preserveAspectRatio="none" role="img" aria-label="Illustrative chart animation">
-    <defs>
-     <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#d9b66c" stop-opacity=".25"/>
-      <stop offset="1" stop-color="#d9b66c" stop-opacity="0"/>
-     </linearGradient>
-    </defs>
-    <path class="gridline" d="M0 30H500 M0 60H500 M0 90H500 M0 120H500"/>
-    <path class="chartfill" d="M0 120 L35 106 L65 113 L95 78 L120 91 L155 62 L180 79 L215 53 L250 68 L280 43 L315 60 L350 31 L380 50 L415 23 L450 38 L500 15 L500 150 L0 150Z"/>
-    <path class="chartline" d="M0 120 L35 106 L65 113 L95 78 L120 91 L155 62 L180 79 L215 53 L250 68 L280 43 L315 60 L350 31 L380 50 L415 23 L450 38 L500 15"/>
-   </svg>
-   <div class="levels">
-    <div class="level entry"><small>ENTRY · DEMO</small><strong>100.00</strong></div>
-    <div class="level stop"><small>STOP · DEMO</small><strong>97.50</strong></div>
-    <div class="level target"><small>TARGET · DEMO</small><strong>105.00</strong></div>
-   </div>
-   <div class="board-bottom"><span class="gold">ⓘ</span><span>These numbers are fictional UI examples, not trading advice or a current recommendation. No live signal service is connected.</span></div>
-  </div>
- </div>
-</section>
-
-<!-- SERVICES -->
-<section id="services">
- <div class="wrap">
-  <div class="section-head reveal">
-   <div>
-    <div class="eyebrow">Choose your direction</div>
-    <h2>Built around your<br><span class="gold">trading journey.</span></h2>
-   </div>
-   <p>Explore the service areas and contact OGX to discuss availability, suitability, terms and next steps.</p>
-  </div>
-
-  <div class="services-grid">
-   <article class="service-card glass reveal">
-    <div class="service-icon">⌁</div>
-    <h3>Trading Signals</h3>
-    <p>Structured trade ideas designed to communicate market context, potential entry areas, risk levels and possible exit scenarios.</p>
-    <a href="#contact" class="text-link" data-interest="Trading signals">Discuss signal access <span class="arrow">↗</span></a>
-   </article>
-
-   <article class="service-card glass featured reveal delay-1">
-    <div class="service-icon">◈</div>
-    <h3>Managed Trading Enquiries</h3>
-    <p>Discuss your objectives, risk tolerance, operating arrangements and the safeguards required before considering any managed-trading relationship.</p>
-    <a href="#contact" class="text-link" data-interest="Managed trading enquiry">Start an enquiry <span class="arrow">↗</span></a>
-   </article>
-
-   <article class="service-card glass reveal delay-2">
-    <div class="service-icon">⌘</div>
-    <h3>Education & Intelligence</h3>
-    <p>Build practical knowledge of market structure, trading discipline, risk controls and the decision-making process.</p>
-    <a href="#contact" class="text-link" data-interest="Education and market intelligence">Explore learning options <span class="arrow">↗</span></a>
-   </article>
-  </div>
-  <p class="notice">Service availability, pricing, eligibility and terms must be confirmed directly. Managed trading involves substantial risk and should not be interpreted as a promise of profit.</p>
- </div>
-</section>
-
-<!-- APPROACH -->
-<section id="intelligence" class="manifesto">
- <div class="wrap">
-  <div class="manifesto-box glass reveal">
-   <div class="eyebrow">The OGX philosophy</div>
-   <h2>In a world obsessed with speed, <span>discipline becomes an edge.</span></h2>
-   <p>We believe the quality of a trading decision begins before the trade itself. Ask better questions. Understand the downside. Set your conditions. Accept that some opportunities are best left untouched.</p>
-   <a href="#contact" class="btn btn-primary">Connect with OGX <span class="arrow">↗</span></a>
-  </div>
- </div>
-</section>
-
-<section class="process">
- <div class="wrap">
-  <div class="section-head reveal">
-   <div>
-    <div class="eyebrow">A deliberate process</div>
-    <h2>Four principles.<br><span class="gold">One discipline.</span></h2>
-   </div>
-  </div>
-  <div class="process-grid">
-   <article class="process-step reveal">
-    <div class="num">01 / OBSERVE</div>
-    <h3>Read the context.</h3>
-    <p>Understand what the market is doing before deciding what it might do next.</p>
-   </article>
-   <article class="process-step reveal delay-1">
-    <div class="num">02 / PLAN</div>
-    <h3>Define the setup.</h3>
-    <p>Know the conditions for entry and the circumstances that invalidate the idea.</p>
-   </article>
-   <article class="process-step reveal delay-2">
-    <div class="num">03 / MANAGE</div>
-    <h3>Respect the risk.</h3>
-    <p>Consider position size, potential losses, liquidity and personal risk tolerance.</p>
-   </article>
-   <article class="process-step reveal delay-3">
-    <div class="num">04 / REVIEW</div>
-    <h3>Learn continuously.</h3>
-    <p>Evaluate decisions honestly. A disciplined process cannot guarantee a winning outcome.</p>
-   </article>
-  </div>
- </div>
-</section>
-
-<!-- FAQ -->
-<section id="faq">
- <div class="wrap faq-layout">
-  <div class="reveal">
-   <div class="eyebrow">Questions, answered</div>
-   <h2>Clarity before<br><span class="gold">commitment.</span></h2>
-   <p style="font-size:13px;line-height:1.9">Understand what OGX offers and what needs to be confirmed before you proceed.</p>
-  </div>
-  <div class="faq-list reveal delay-1">
-   <div class="faq-item">
-    <button class="faq-question" aria-expanded="false"><span>What is OGX?</span><span>+</span></button>
-    <div class="faq-answer"><div><p>OGX, short for Oga Exchange, is a trading-focused brand concept centred on market awareness, structured insights, education and enquiries about trading-related services.</p></div></div>
-   </div>
-   <div class="faq-item">
-    <button class="faq-question" aria-expanded="false"><span>Are the prices and charts live?</span><span>+</span></button>
-    <div class="faq-answer"><div><p>No. The figures and charts currently shown are illustrative placeholders for the website design. A verified market-data provider and integration are needed before live prices can be displayed.</p></div></div>
-   </div>
-   <div class="faq-item">
-    <button class="faq-question" aria-expanded="false"><span>How can I enquire about signals?</span><span>+</span></button>
-    <div class="faq-answer"><div><p>Use the enquiry form below to express your interest. Subscription options, pricing, delivery arrangements and terms must be confirmed directly before payment or access.</p></div></div>
-   </div>
-   <div class="faq-item">
-    <button class="faq-question" aria-expanded="false"><span>Does OGX guarantee profits?</span><span>+</span></button>
-    <div class="faq-answer"><div><p>No. Trading cryptocurrencies, futures and other financial instruments can result in substantial losses. No signal, strategy or service can guarantee profits or eliminate risk.</p></div></div>
-   </div>
-   <div class="faq-item">
-    <button class="faq-question" aria-expanded="false"><span>Can I hand over funds for managed trading?</span><span>+</span></button>
-    <div class="faq-answer"><div><p>This website does not accept deposits or manage client funds. Any proposed arrangement must be independently assessed for legality, authorisation, custody, fees, risks and written terms before proceeding. Never share passwords, seed phrases or exchange API secrets through this website.</p></div></div>
-   </div>
-   <div class="faq-item">
-    <button class="faq-question" aria-expanded="false"><span>Can I create an account or pay online?</span><span>+</span></button>
-    <div class="faq-answer"><div><p>Not yet. This version does not include user authentication, a client dashboard, payment processing or a subscription database. Those features require secure backend services and testing before launch.</p></div></div>
-   </div>
-  </div>
- </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
- <div class="wrap contact-grid">
-  <div class="contact-copy reveal">
-   <div class="eyebrow">Your next conversation starts here</div>
-   <h2>Let's talk<br><span class="gold">strategy.</span></h2>
-   <p>Tell us what you are interested in. Use the form to prepare an enquiry and continue the conversation through your preferred contact channel.</p>
-
-   <div class="contact-options">
-    <a class="contact-option" href="#contactForm">
-     <div class="service-icon">↗</div>
-     <div><strong>General enquiries</strong><small>Services, availability and next steps</small></div>
-    </a>
-    <a class="contact-option" href="#contactForm" data-interest="Trading signals">
-     <div class="service-icon">⌁</div>
-     <div><strong>Signals & insights</strong><small>Ask about the available options</small></div>
-    </a>
-    <a class="contact-option" href="#contactForm" data-interest="Managed trading enquiry">
-     <div class="service-icon">◈</div>
-     <div><strong>Managed trading enquiries</strong><small>Discuss arrangements and risk considerations</small></div>
-    </a>
-   </div>
-   <p class="notice">The form opens a prepared email using your device's email application. It does not send or store your information automatically.</p>
-  </div>
-
-  <form class="contact-form glass reveal delay-1" id="contactForm">
-   <h3>Make an enquiry</h3>
-   <p>Share a few details so your message is clear.</p>
-
-   <div class="field">
-    <label for="name">YOUR NAME</label>
-    <input id="name" name="name" autocomplete="name" placeholder="Enter your name" required>
-   </div>
-   <div class="field">
-    <label for="email">EMAIL ADDRESS</label>
-    <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
-   </div>
-   <div class="field">
-    <label for="interest">WHAT ARE YOU INTERESTED IN?</label>
-    <select id="interest" name="interest" required>
-     <option value="">Select an enquiry type</option>
-     <option>Trading signals</option>
-     <option>Managed trading enquiry</option>
-     <option>Education and market intelligence</option>
-     <option>General enquiry</option>
-     <option>Partnership</option>
-    </select>
-   </div>
-   <div class="field">
-    <label for="message">YOUR MESSAGE</label>
-    <textarea id="message" name="message" placeholder="Tell us what you would like to know..." required></textarea>
-   </div>
-   <button class="btn btn-primary" type="submit">Prepare my enquiry <span class="arrow">↗</span></button>
-   <p class="form-note">Please do not include passwords, wallet seed phrases, private keys or confidential financial information.</p>
-  </form>
- </div>
-</section>
+  <section class="cta" id="contact">
+    <div>
+      <div class="section-label">Start with clarity</div>
+      <h2>Bring the boss mindset<br>to your next move.</h2>
+      <p>Ask about OGAEX services, signals or community access.</p>
+    </div>
+    <!-- Replace the placeholder email below with your actual contact email. -->
+    <a class="button button-gold" href="mailto:REPLACE-WITH-YOUR-REAL-EMAIL@example.com?subject=OGAEX%20Enquiry">Contact OGAEX ↗</a>
+  </section>
 </main>
 
-<!-- FOOTER -->
 <footer>
- <div class="wrap">
-  <div class="footer-top">
-   <a class="brand" href="#home">
-    <div class="brand-mark">O<span style="font-size:12px">X</span></div>
-    <div>
-     <div class="brand-name">OGX</div>
-     <div class="brand-sub">OGA EXCHANGE</div>
-    </div>
-   </a>
-   <div class="footer-links">
-    <a href="#markets">Markets</a>
-    <a href="#signals">Signals</a>
-    <a href="#services">Services</a>
-    <a href="#faq">FAQ</a>
-    <a href="#contact">Contact</a>
-   </div>
-  </div>
-  <div class="footer-bottom">
-   <p>© <span id="year"></span> OGX · Oga Exchange. All rights reserved.<br>
-   Trading and investing involve risk, including the possible loss of capital. Nothing on this website constitutes a guarantee of returns or personalised financial advice. Sample market data is illustrative. Confirm service terms and applicable regulatory requirements before entering any financial arrangement.</p>
-   <span>BUILT AROUND DISCIPLINE.</span>
-  </div>
- </div>
+  <div><div class="footer-logo">OGAEX</div><span>OGA EXCHANGE</span></div>
+  <div class="footer-tag">MORE THAN TRADING. IT’S A MINDSET.</div>
+  <div>GLOBAL MARKETS · AFRICAN ROOTS · BOSS MINDSET ↗</div>
 </footer>
 
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="disclaimer">
+  Risk notice: Trading involves risk and may not be suitable for everyone. This website currently displays illustrative market values only. No profit is guaranteed. Replace the contact email and connect real market data, secure accounts, payments and signal-delivery systems before presenting those functions as live.
+</div>
 
 <script>
-(function(){
- "use strict";
+const menuButton = document.getElementById("menuButton");
+const navigation = document.getElementById("navigation");
 
- const $ = (selector, root=document) => root.querySelector(selector);
- const $$ = (selector, root=document) => [...root.querySelectorAll(selector)];
+menuButton.addEventListener("click", () => {
+  const open = navigation.classList.toggle("open");
+  menuButton.setAttribute("aria-expanded", String(open));
+  menuButton.textContent = open ? "✕" : "☰";
+});
 
- // Navigation appearance
- const navbar = $("#navbar");
- function updateNav(){
-   navbar.classList.toggle("scrolled", window.scrollY > 20);
- }
- window.addEventListener("scroll", updateNav, {passive:true});
- updateNav();
-
- // Mobile navigation
- const menuToggle = $("#menuToggle");
- const navLinks = $("#navLinks");
-
- menuToggle.addEventListener("click", function(){
-   const isOpen = navLinks.classList.toggle("open");
-   menuToggle.setAttribute("aria-expanded", String(isOpen));
-   menuToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
-   menuToggle.textContent = isOpen ? "✕" : "☰";
- });
-
- $$("#navLinks a").forEach(link => {
-   link.addEventListener("click", function(){
-     navLinks.classList.remove("open");
-     menuToggle.setAttribute("aria-expanded","false");
-     menuToggle.setAttribute("aria-label","Open navigation");
-     menuToggle.textContent = "☰";
-   });
- });
-
- // Kinetic hero typography
- const changingWord = $("#changingWord");
- const words = ["Trade.", "Learn.", "Adapt.", "Advance."];
- let wordIndex = 0;
-
- if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches){
-   setInterval(() => {
-     wordIndex = (wordIndex + 1) % words.length;
-     changingWord.animate(
-       [{opacity:1, transform:"translateY(0)"},{opacity:0,transform:"translateY(-12px)"}],
-       {duration:220,easing:"ease-in",fill:"forwards"}
-     ).onfinish = () => {
-       changingWord.textContent = words[wordIndex];
-       changingWord.animate(
-         [{opacity:0,transform:"translateY(12px)"},{opacity:1,transform:"translateY(0)"}],
-         {duration:350,easing:"ease-out"}
-       );
-     };
-   }, 2600);
- }
-
- // Scroll reveal
- const revealItems = $$(".reveal");
- if ("IntersectionObserver" in window){
-   const observer = new IntersectionObserver(entries => {
-     entries.forEach(entry => {
-       if(entry.isIntersecting){
-         entry.target.classList.add("visible");
-         observer.unobserve(entry.target);
-       }
-     });
-   }, {threshold:.12});
-   revealItems.forEach(item => observer.observe(item));
- } else {
-   revealItems.forEach(item => item.classList.add("visible"));
- }
-
- // Active navigation section
- const sections = $$("main section[id]");
- if ("IntersectionObserver" in window){
-   const sectionObserver = new IntersectionObserver(entries => {
-     entries.forEach(entry => {
-       if(entry.isIntersecting){
-         $$("#navLinks a").forEach(a => {
-           a.classList.toggle("active", a.getAttribute("href") === "#" + entry.target.id);
-         });
-       }
-     });
-   }, {rootMargin:"-35% 0px -55% 0px"});
-   sections.forEach(section => sectionObserver.observe(section));
- }
-
- // FAQ accordions
- $$(".faq-question").forEach(button => {
-   button.addEventListener("click", () => {
-     const item = button.closest(".faq-item");
-     const wasOpen = item.classList.contains("open");
-     $$(".faq-item").forEach(other => {
-       other.classList.remove("open");
-       $(".faq-question", other).setAttribute("aria-expanded","false");
-     });
-     if(!wasOpen){
-       item.classList.add("open");
-       button.setAttribute("aria-expanded","true");
-     }
-   });
- });
-
- // Gentle pointer tilt on the signal card
- const tiltCard = $("#tiltCard");
- if (tiltCard && window.matchMedia("(hover:hover) and (pointer:fine)").matches &&
-     !window.matchMedia("(prefers-reduced-motion: reduce)").matches){
-   tiltCard.addEventListener("mousemove", e => {
-     const r = tiltCard.getBoundingClientRect();
-     const x = (e.clientX - r.left) / r.width - .5;
-     const y = (e.clientY - r.top) / r.height - .5;
-     tiltCard.style.transform = `rotateX(${-y*3}deg) rotateY(${x*3}deg)`;
-   });
-   tiltCard.addEventListener("mouseleave", () => {
-     tiltCard.style.transform = "rotateX(0) rotateY(0)";
-   });
- }
-
- // Service links preselect the enquiry type
- $$("[data-interest]").forEach(link => {
-   link.addEventListener("click", () => {
-     const interest = $("#interest");
-     if(interest) interest.value = link.dataset.interest;
-   });
- });
-
- // Contact form: prepare an email without transmitting data to a server
- // IMPORTANT: replace this placeholder with the real, monitored OGX contact email.
- const CONTACT_EMAIL = "REPLACE-WITH-YOUR-REAL-EMAIL@example.com";
- const form = $("#contactForm");
- const toast = $("#toast");
- let toastTimer;
-
- function showToast(message){
-   toast.textContent = message;
-   toast.classList.add("show");
-   clearTimeout(toastTimer);
-   toastTimer = setTimeout(() => toast.classList.remove("show"), 5000);
- }
-
- form.addEventListener("submit", function(e){
-   e.preventDefault();
-   if(!form.reportValidity()) return;
-
-   if(CONTACT_EMAIL.includes("REPLACE-WITH-YOUR-REAL-EMAIL")){
-     showToast("Before launch, replace the placeholder contact email in the code with your real OGX email.");
-     return;
-   }
-
-   const name = $("#name").value.trim();
-   const email = $("#email").value.trim();
-   const interest = $("#interest").value;
-   const message = $("#message").value.trim();
-
-   const subject = encodeURIComponent("OGX Website Enquiry — " + interest);
-   const body = encodeURIComponent(
-     "Name: " + name + "\n" +
-     "Email: " + email + "\n" +
-     "Enquiry type: " + interest + "\n\n" +
-     "Message:\n" + message
-   );
-
-   window.location.href = "mailto:" + CONTACT_EMAIL +
-     "?subject=" + subject + "&body=" + body;
- });
-
- // Current year
- $("#year").textContent = new Date().getFullYear();
-})();
+navigation.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navigation.classList.remove("open");
+    menuButton.setAttribute("aria-expanded", "false");
+    menuButton.textContent = "☰";
+  });
+});
 </script>
-
 </body>
 </html>
